@@ -1,23 +1,8 @@
 #include <iostream>
 #include <vector>
-#include <string>
+#include "search.h"
+
 using namespace std;
-
-struct Student {
-    string name;
-    double gpa;
-};
-
-void displayStudents(const vector<Student>& students) {
-    cout << "\nDanh sach sinh vien:\n";
-
-    for (int i = 0; i < students.size(); i++) {
-        cout << i + 1 << ". "
-             << students[i].name
-             << " - GPA: "
-             << students[i].gpa << endl;
-    }
-}
 
 int main() {
     vector<Student> students = {
@@ -26,9 +11,11 @@ int main() {
         {"Le Van Cuong", 9.1}
     };
 
-    cout << "QUAN LY SINH VIEN\n";
+    cout << "===== QUAN LY SINH VIEN =====\n";
 
     displayStudents(students);
+
+    searchStudent(students);
 
     return 0;
 }
